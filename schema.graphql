@@ -1,0 +1,12 @@
+type Holder @entity {
+  # Address of holder _ token address
+  id: ID!
+  # Address
+  token: String!
+  # Address
+  holder: String!
+  # BalanceOf
+  balance: BigInt!
+  # Week at which the holder exited
+  week: BigInt!
+}

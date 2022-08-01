@@ -1,0 +1,25 @@
+specVersion: 0.0.2
+description: Tracks weekly token holders on mainnet.
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Token
+    network: mainnet
+    source:
+      address: '0x3785ce82be62a342052b9e5431e9d3a839cfb581'
+      abi: ERC20
+      startBlock: 12472780
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Holder
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping/erc20.ts
