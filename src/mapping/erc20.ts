@@ -1,6 +1,6 @@
 import { Address, store, BigInt } from '@graphprotocol/graph-ts'
 import { Holder } from '../../generated/schema'
-import { Transfer } from '../../generated/Token/ERC20'
+import { Transfer } from '../../generated/Token1/ERC20'
 
 export function handleTransfer(event: Transfer): void {
   // Do nothing if the transfer is void
@@ -15,7 +15,7 @@ export function handleTransfer(event: Transfer): void {
     let tempData: Holder | null
     let toData: Holder
     tempData = Holder.load(toId)
-    if (tempData != null) {
+    if (tempData == null) {
       toData = new Holder(toId)
       toData.balance = event.params.value
     } else {
@@ -35,12 +35,12 @@ export function handleTransfer(event: Transfer): void {
     fromData.token = event.address.toHexString()
     fromData.holder = event.params.from.toHexString()
     let newBalance = fromData.balance.minus(event.params.value)
+    fromData.balance = newBalance
     if (newBalance.equals(BigInt.fromString('0'))) {
-      store.remove('Holder', fromId)
-    } else {
-      fromData.balance = newBalance
       fromData.week = event.block.timestamp.div(BigInt.fromString((7 * 24 * 3600).toString()))
-      fromData.save()
+    } else {
+      fromData.week = BigInt.fromString('0')
     }
+    fromData.save()
   }
 }
