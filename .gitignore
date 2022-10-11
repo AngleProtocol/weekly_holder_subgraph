@@ -4,3 +4,4 @@
 */subgraph.yaml
 node_modules
 *.DS_Store
+subgraph.yaml

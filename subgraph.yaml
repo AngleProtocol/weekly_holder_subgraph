@@ -123,3 +123,23 @@ dataSources:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
       file: ./src/mapping/erc20.ts
+  - kind: ethereum/contract
+    name: Token7
+    network: mainnet
+    source:
+      address: '0xe980599BF7fa44230c58c270D30cb30c3Db7F99a'
+      abi: ERC20
+      startBlock: 14001890
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Holder
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping/erc20.ts
