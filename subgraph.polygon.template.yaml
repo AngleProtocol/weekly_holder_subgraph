@@ -7,7 +7,7 @@ dataSources:
     name: Token1
     network: {{network}}
     source:
-      address: '0x3785ce82be62a342052b9e5431e9d3a839cfb581'
+      address: '0x4EA4C5ca64A3950E53c61d0616DAF92727119093'
       abi: ERC20
       startBlock: {{block}}
     mapping:
@@ -27,7 +27,7 @@ dataSources:
     name: Token2
     network: {{network}}
     source:
-      address: '0xEB7547a8a734b6fdDBB8Ce0C314a9E6485100a3C'
+      address: '0x1644de0A8E54626b54AC77463900FcFFD8B94542'
       abi: ERC20
       startBlock: {{block}}
     mapping:
@@ -47,7 +47,7 @@ dataSources:
     name: Token3
     network: {{network}}
     source:
-      address: '0xf6eeCA73646ea6A5c878814e6508e87facC7927C'
+      address: '0x15BdE1A8d16d4072d949591aFd4fA7ad9d127D05'
       abi: ERC20
       startBlock: {{block}}
     mapping:
@@ -67,67 +67,7 @@ dataSources:
     name: Token4
     network: {{network}}
     source:
-      address: '0x857E0B2eD0E82D5cDEB015E77ebB873C47F99575'
-      abi: ERC20
-      startBlock: {{block}}
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      entities:
-        - Holder
-      abis:
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransfer
-      file: ./src/mapping/erc20.ts
-  - kind: ethereum/contract
-    name: Token5
-    network: {{network}}
-    source:
-      address: '0xEDECB43233549c51CC3268b5dE840239787AD56c'
-      abi: ERC20
-      startBlock: {{block}}
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      entities:
-        - Holder
-      abis:
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransfer
-      file: ./src/mapping/erc20.ts
-  - kind: ethereum/contract
-    name: Token6
-    network: {{network}}
-    source:
-      address: '0x717A3276bd6F9e2f0aE447e0ffb45D0fa1c2dc57'
-      abi: ERC20
-      startBlock: {{block}}
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      entities:
-        - Holder
-      abis:
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransfer
-      file: ./src/mapping/erc20.ts
-  - kind: ethereum/contract
-    name: Token7
-    network: {{network}}
-    source:
-      address: '0xe980599BF7fa44230c58c270D30cb30c3Db7F99a'
+      address: '0xa29193Af0816D43cF44A3745755BF5f5e2f4F170'
       abi: ERC20
       startBlock: {{block}}
     mapping:
