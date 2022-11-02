@@ -143,3 +143,43 @@ dataSources:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
       file: ./src/mapping/erc20.ts
+  - kind: ethereum/contract
+    name: Token8
+    network: {{network}}
+    source:
+      address: '0xf56abca39c27d5c74f94c901b8c137fdf53b3e80'
+      abi: ERC20
+      startBlock: {{block}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Holder
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping/erc20.ts
+  - kind: ethereum/contract
+    name: Token9
+    network: {{network}}
+    source:
+      address: '0xe8f20fd90161de1d5b4cf7e2b5d92932ca06d5f4'
+      abi: ERC20
+      startBlock: {{block}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Holder
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping/erc20.ts
